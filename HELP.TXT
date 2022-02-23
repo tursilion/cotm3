@@ -1,0 +1,218 @@
+Creature of the Maze ]I[ - version 0.5 by M. Brent
+--------------------------------------------------
+
+Creature of the Maze ]I[ is a Dungeon-style game in which you wander a
+large maze in an attempt to find and destroy the evil boss creature on
+level 9.
+
+The levels are each 75x75 in size, and there are 10 levels numbered 0-9.
+
+Movement through the maze is accomplished by entering the direction, 
+(N)orth, (S)outh, (E)ast or (W)est. Certain obstacles, like doors, require
+a certain item be in the player's inventory in order to pass by them.
+
+The (I)nventory/stats command will display the current player's character
+information, the spells learned, the items being carried, and any companions
+who may be tagging along. The following stats are kept track of:
+
+Magic - each spell has a set number of points required to cast it. In the
+        spell list, more powerful spells are listed last, but do not require
+        more points to cast. Magic has a max of 999 points.
+
+Skill - this is the player's skill with attacking and defending. A higher
+        skill is better. Max skill is 999.
+
+Strength - the character's strength and hit points. The strength determines
+           whether the character can perform certain difficult tasks. It also
+           serves as a measure of how much life is left.. if this value
+           reaches 0 the character is dead. There is no (practical) upper
+           limit.
+
+(x,y) - this is the player's location in the maze
+
+Level - the level of the maze the player is on
+
+Neutral, Good, Evil - the player's disposition, based on who the character
+                      attacks without provokation, mostly, or spending time
+                      in temples.
+
+Armour - one point of armour will stop 1 point of attack damage. When the
+         armour is destroyed the player will take damage again
+
+Weapon - the name of the weapon and it's strength. The amount of damage done
+         in a hit is based on the player's strength and the + indicator of
+         the weapon
+
+Curse - when a player is cursed, this many points are deducted from skill
+        ONLY WHEN ATTACKING. Curses may be cured by praying or by magic.
+
+The (M)agic command allows a player to cast a spell. Each spell has it's own
+effects on player and/or enemy stats. The player must have enough magic 
+points to cast the spell. The lower the spell in the list, the more 
+powerful it is, even if it's the same spell. For example, a number 9 Curse
+spell will cause a greater curse on the enemy than a number 2 Curse. 
+
+Spells are learned as skill increases, and may not be changed once learned.
+Beware, some spells may harm the caster. The name of the spell will usually
+suggest what it will do. (If you can figure out what the word means!)
+
+The only way to increase magic points is to find and use a magic potion.
+
+You may also find magic scrolls to do various things. These do not require
+any magic points.
+
+The (U)se command will allow the player to use an item in his inventory. The
+results of this depend on the item.
+
+(R)est will regain some strength points, up to a certain limit. You can rest
+to a higher limit on deeper levels.
+
+(P)raying is usually done to cure a curse. At a temple, it will also provide
+devine inspiration. It also solidifies your position as good or evil.
+
+e(X)amine will allow you to examine an item you have already picked up. 
+When you find an item, you are given the option of taking it, leaving it
+or describing it. e(X)amine will show you a description after you have
+already taken it.
+
+(Q)uit will save your game and return you to the BBS.
+
+(?) displays a brief summary of the commands
+
+(!) displays this file
+
+When you meet a monster, they may be willing to talk to you. If you are too
+evil or too good, they may attack on sight. If you talk to them, they may 
+give some advice that they heard somewhere. Then they may offer to join you.
+If you accept, they will follow you around and help in battles. They will
+not follow you to a new level, unless you fall down a trapdoor, and they
+will not fight the boss.
+
+Companions have no armour, no special weapons and no magic. But they still
+pack a wallop!
+
+You may carry a maximum of ten items and know ten spells.
+
+In the item list there will always be a spot for candles and a spot for 
+gold coins. Gold is used for buying things at store, and candles are
+required to stay alive. If you run out of candles, it's game over.
+
+The stores are scattered about, where a creature will offer to sell you
+three items, usually at outrageous prices. You can leave and re-enter a
+store as often as you like to get different items.
+
+To go up or down levels, find stairs, fall down a trapdoor, use a scroll, 
+or there may be other ways...
+
+When you get into a fight with an enemy, you are given four options. You
+may attack for all you are worth against one opponent (randomly chosen),
+you may use magic which affects all enemies (no scrolls, however), you may
+try to bribe the monsters into joining your party (up to 10 at a time), or 
+you may try to escape, which may or may not succeed. The monster(s) will 
+attack you, and your companions if you have any, and the companions will
+attack the monsters. When all monsters are dead, you will receive bonus 
+skill, strength, and possibly gold.
+
+A word on bribing... every creature has it's price. If you don't offer
+enough, they may hold back to see what else you do. You can bribe again
+to offer still more. Note that you cannot give away candles, but you can
+give away gold. Remember, though! One man's garbage is another creature's
+treasure... some of that junk may be worth more than gold in bartering.
+
+The object of the game is to defeat the boss creature on level 9. If you can
+do it, your character will get to become the boss! Good luck!
+
+------------------------
+Notes to sysops: (AMIGA)
+------------------------
+
+Read the HELP.TXT file on how to play, this is how to setup:
+Create a subdirectory and copy all the files into it. You will need
+COTM3, LEVEL0.DAT - LEVEL9.DAT, CREATURE.DAT, PLAYERS.DAT, HINTS.DAT
+HELP.TXT, MONSTERS.DAT, POSSESS.DAT and SPELLS.DAT. There may also
+be any number of P00?.DAT, where ? is a number. PLAYERS.DAT must exist,
+but it may be empty. For every line in PLAYERS.DAT there will be one
+P00?.DAT file, although these are only needed if that player logs on.
+To set up on a BBS, your BBS must handle the I/O redirection, carrier
+detect, etc. (ie:it must be automatic!). Simply run the COTM3 file
+with the player's ID as an argument. It may be a name, handle, or number,
+but it MUST be unique to the user, and it must NOT contain any spaces!
+example: COTM3 FLIPPER is fine, but COTM3 RANCID INSTIGATOR is not.
+COTM3 27 would also work (user ID #27.)
+
+I use CNET, and the arguments I use are "%40 work:work/cotm/" (it's not in
+my PFILES: section because I'm still developing it.) %40 is the user number.
+
+If your BBS does not change directories, or basically if the program
+is having a hard time finding data files, you can specify the path
+where the data is located. It must be a complete path with an ending
+backslash, and it must come after the user ID. Etc:
+COTM3 FLIPPER C:\BBS\GAMES\COTM3\
+
+---------------
+Program History
+---------------
+0.1 :   - 1 Jan 1995
+        - initial release on FlipSide
+
+0.2 :   - 2 Jan 1995
+        - increased strength limit to almost unlimited
+        - fixed spells to use position number in list vice level of maze
+        - added routine for companions to attack
+        - monsters use magic and attack companions
+        - boss routine written
+        - e(X)amine possessions command added
+        - (P)ray command added
+        - explanation of how to pass obstacles (like a door) added
+        - increased skill value needed to learn spells
+        - added help file
+        - various bug fixes
+
+0.3     - 5 Jan 1995
+        - released only on FlipSide
+        - (B)ribe creature command added
+        - cursed items added
+        - fixed bug preventing monsters from using magic
+        - monster magic for good/evil checks and limit checks added
+        - fixed bug in daily maintenance which fubar'd CREATURE.DAT
+        - new item for light
+        - changed (c) date to 1995 :)
+        - increased difficulty of escaping
+        - updated -maint option to create LOCATION.DAT file for multiplayer
+        - minor bug fixes, and some cleaning up of text
+
+0.4	- 20 Jan 1995
+	- neutral creatures may attack
+	- multiplayer (limited) added
+	- news file added
+	- enemies may attack when ignored.
+	- monsters may attack while resting or praying
+	- see stats in battle
+	- friends won't take off as quickly when you're too good or evil
+	- candle bug fixed
+	- now everyone knows who killed you!
+
+0.5     - 18 Jun 1995
+	- fixed major bugs in maint routine, abandoned project
+	  due to absence from program
+
+-----	
+TO DO
+-----
+- COTM IV!
+
+----------------
+Legal-like stuff
+----------------
+
+(c)1995 by M. Brent. This program is freeware, but not public domain. It may
+be distributed and used on any BBS system or personal computer, so long as
+it is not modified and is freely accessible. If any pay-for-access BBS wants
+to use it, I ask that they contact me first, perhaps with a demo account of
+their system so I can take a look. The only compensation I ask for this
+program being run on a free BBS is that you send me the BBS number!
+
+Compiled simultaneously for the Amiga and IBM.
+
+Send numbers, comments, suggestions, and spare cash to tursi.
+

@@ -1,0 +1,7 @@
+(c)1995 by M. Brent. This program is freeware, but not public domain. It may
+be distributed and used on any BBS system or personal computer, so long as
+it is not modified and is freely accessible. If any pay-for-access BBS wants
+to use it, I ask that they contact me first, perhaps with a demo account of
+their system so I can take a look. The only compensation I ask for this
+program being run on a free BBS is that you send me the BBS number!
+

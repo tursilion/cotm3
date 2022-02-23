@@ -1,0 +1,24 @@
+MAKEMAZE.DOC
+------------
+
+This program creates the mazes (LEVEL?.DAT) for Creature of the Maze ]I[.
+
+To use it, just enter MAKEMAZE [level number] (ie: MAKEMAZE 0). Levels
+are from 0 to 9. The lower levels MUST be done before the higher ones,
+or things will not work.
+
+A simple batch or script file to update the whole maze would look like:
+
+MAKEMAZE 0
+MAKEMAZE 1
+MAKEMAZE 2
+MAKEMAZE 3
+MAKEMAZE 4
+MAKEMAZE 5
+MAKEMAZE 6
+MAKEMAZE 7
+MAKEMAZE 8
+MAKEMAZE 9
+
+(Keep in mind that you should now reset PLAYERS.DAT to an empty file and
+delete all the Pxxx.DAT files (xxx being a 3 digit number).
